@@ -1,53 +1,291 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="no-js" lang="en">
 
 <head>
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mon portfolio</title>
-    <link rel="stylesheet" href="css/site.css">
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-    crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-    crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-        crossorigin="anonymous"></script>
- 
-
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sirine Reys</title>
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+	<link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
+    <link rel="stylesheet" href="libs/font-awesome/css/font-awesome.min.css">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
 </head>
 
 <body>
-    <div class="container-fluid">   
-        <div class="jumbotron">
-            <h1 class="display-4">Portfolio BTS SIO</h1>
-            <p class="lead">Exemple de template de portfolio</p>
-            <hr class="my-4">    
-          </div>
-          <div class="row">
-            <div class="col-3">
-                <p><b>Mes projets</b></p>
-                <ul class="listeLiens">
-                    <li><a href="ppe1.html">PPE1</a></li>
-                    <li>PPE2</li>
-                    <li>Stage 1</li>
-                    <li>Stage 2</li>
-                    <li>Veille technologique</li>
-                </ul>
-            </div>
-            <div class="col-9">
-            <h1>Mon Portofolio</h1>
-            <p>Je me présente, je m'appelle Henry je voudrais bien réussir ma vie.</p>
-          </div>
-          </div>
+    <div id="mobile-menu-open" class="shadow-large">
+        <i class="fa fa-bars" aria-hidden="true"></i>
     </div>
+    <!-- End #mobile-menu-toggle -->
+    <header>
+        <div id="mobile-menu-close">
+            <span>Close</span> <i class="fa fa-times" aria-hidden="true"></i>
+        </div>
+        <ul id="menu" class="shadow">
+            <li>
+                <a href="#about">À propos de moi</a>
+            </li>
+            <li>
+                <a href="#experience">Expérience</a>
+            </li>
+            <li>
+                <a href="#education">Parcours</a>
+            </li>
+            <li>
+                <a href="#projects">Projets</a>
+            </li>
+            <li>
+                <a href="#skills">Compétences</a>
+            </li>
+            <li>
+                <a href="#contact">Contacts</a>
+            </li>
+        </ul>
+    </header>
+    <!-- End header -->
 
+    <div id="lead">
+        <div id="lead-content">
+            <h1>Sirine Sassi Reys</h1>
+            <h2>Étudiant BTS SIO SLAM</h2>
+            <a href="#" class="btn-rounded-white">Télécharger CV</a>
+        </div>
+        <!-- End #lead-content -->
 
+        <div id="lead-overlay"></div>
+
+        <div id="lead-down">
+            <span>
+                <i class="fa fa-chevron-down" aria-hidden="true"></i>
+            </span>
+        </div>
+        <!-- End #lead-down -->
+    </div>
+    <!-- End #lead -->
+
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h2 class="heading">À propos de moi</h2>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                        Je suis une étudiante en 2 éme année de BTS SIO Solutions Logicielles et Applications Métiers.
+                        Expérimentée et hautement motivée. 
+                        Je suis capable de former à la mise en place de solutions informatiques au sein des entreprises et gérer un parc informatique complet.
+                        Mon travail est basé à concevoir et développer une solution applicative et assurer la maintenance corrective et la cybersécurité.
+                        <h4>À la recherche d'une alternance dans le domaine de dévloppement web.</h4>
+
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End #about -->
+
+    <div id="experience" class="background-alt">
+        <h2 class="heading">Expérience</h2>
+        <div id="experience-timeline">
+            <div data-date="Février 2021 – Août 2022">
+                <h3>Partecis</h3>
+                <h4>Gestion de parc et support utilisateur</h4>
+                <p>
+                    Traitement de 1er et 2éme niveau des incidents ou anomalies sur les postes de travail, 
+                    signalés en interne ou par Jira :
+                     diagnostic, identification, formulation, résolution.
+                </p><br>
+                <h4>Administration Système</h4>
+                <p>
+                    Installaton et déploiyement de mise à jour windows pour les 3 parcs informatiques sur 3 phases différentes.
+                    Installation de plugin Generic Object sur Glpi. Et faire tout un parc mobilier 
+                </p> 
+            </div>
+
+            <div data-date="Août 2018 – Août 2020">
+                <h3>Auchan</h3>
+                <h4>Hôtesse de caisse</h4>
+               <p>
+                   Être à l’écoute, souriante et aimable...
+               </p>
+             </div>
+
+            <div data-date="September 2017 – Mai 2018">
+                <h3>Domino's Pizza</h3>
+                <h4>Employer Polivalente</h4>
+                <p>
+                    Renseigner le client sur la composition des produits et enregistrer sa commande.
+                    Préparation et rapidité...
+                </p>
+            </div>
+        </div>
+    </div>
+    <!-- End #experience -->
+
+    <div id="education">
+        <h2 class="heading">Études</h2>
+
+        <div class="education-block">
+            <h3>Institut F2I (Vincennes, France)</h3>
+            <span class="education-date">Février 2021 - Juillet 2022</span>
+            <h4>BTS SIO Solutions Logicielles et Applications Métiers</h4>
+            <ul>
+                <li>Rédaction des cahiers des charges.</li>
+                <li>Formulation des besoins et spécifications.</li>
+                <li>Développement web et bureautique.</li>
+            </ul>
+        </div>
+        <!-- End .education-block -->
+
+        <div class="education-block">
+            <h3>Inte'ch (Ivry Sur Seine, France)</h3>
+            <span class="education-date">Sept 2016 - Sept 2019</span>
+            <h4>Formation en informatique</h4>
+            <p>Développement web et bureautique.</p>
+        </div>
+            <!-- End .education-block -->
+
+        <div class="education-block">
+            <h3>Lycée
+                Ahmed Tlili (Gafsa, Tunisie)</h3>
+            <span class="education-date">Sept 2015 - Juin 2016</span>
+            <h4>Baccalauréat Scientifique
+                Spécialité Mathématiques </h4>
+        </div>
+    <!-- End .education-block -->
+</div>
+
+    <!-- End #education -->
+
+    <div id="projects" class="background-alt">
+        <h2 class="heading">Projets</h2>
+        <div class="container">
+            <div class="row">
+                <div class="project shadow-large">
+                    <div class="project-image">
+                        <img src="images/project.jpg" />
+                    </div>
+                    <!-- End .project-image -->
+                    <div class="project-info">
+                        <h3>Gestions mobiliers</h3>
+                        <p>
+                            Projet permet la gestion de mobilier dans plusieurs parc informatiques.
+                            Les languages utilisées (php, mysql, css, bootstrap)
+                        </p>
+                        <a href="#">View Project</a>
+                    </div>
+                    <!-- End .project-info -->
+                </div>
+                <!-- End .project -->
+
+                <div class="project shadow-large">
+                    <div class="project-image">
+                        <img src="images/gestionadehrent.png" />
+                    </div>
+                    <!-- End .project-image -->
+                    <div class="project-info">
+                        <h3>Gestions des adhérents</h3>
+                        <p>
+                            Un site web qui géres les adhérents dans un club.
+                            Les languages utilisées (php, mysql, css)
+                        </p>
+                        <a href="../../Projet">Regarder le project</a>
+                    </div>
+                    <!-- End .project-info -->
+                </div>
+                <!-- End .project -->
+            </div>
+        </div>
+    </div>
+    <!-- End #projects -->
+
+    <div id="skills">
+        <h2 class="heading">Compétences</h2>
+        <ul>
+            <li>JavaScript</li>
+            <li>Python</li>
+            <li>C#</li>
+            <li>PHP</li>
+            <li>HTML/CSS</li>
+            <li>Bootstrap</li>
+
+        </ul>
+        <ul>  
+            <li>Git</li>
+            <li>Microsoft Visual Studio</li>
+            <li>Microsoft Visual Studio Code</li>
+            <li>Sublime Text</li>
+        </ul>
+        <ul>
+            <li>Esprit d'équipe</li>
+            <li>Gestion de projet agile</li>
+            <li>Pilotage de projet</li>
+        </ul>
+        <ul>
+            <li>SQL Server</li>
+            <li>MySQL</li>
+        </ul>
+    </div>
+    <!-- End #skills -->
+
+    <div id="contact">
+        <h2>M'envoyer un message</h2>
+        <div id="contact-form">
+            <form method="POST" action="https://formspree.io/email@email.com">
+                <input type="hidden" name="_subject" value="Contact request from personal website" />
+                <input type="email" name="_replyto" placeholder="Adresse mail" required>
+                <textarea name="message" placeholder="message" required></textarea>
+                <button type="submit">Envoyé</button>
+            </form>
+        </div>
+        <!-- End #contact-form -->
+    </div>
+    <!-- End #contact -->
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-5 copyright">
+                    <p>
+                        Copyright &copy; 2022 Sirine Reys
+                    </p>
+                </div>
+                <div class="col-sm-2 top">
+                    <span id="to-top">
+                        <i class="fa fa-chevron-up" aria-hidden="true"></i>
+                    </span>
+                </div>
+                <div class="col-sm-5 social">
+                    <ul>
+                        <li>
+                            <a href="https://github.com/" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+                        </li>
+                        <li>
+                            <a href="https://stackoverflow.com/" target="_blank"><i class="fa fa-stack-overflow" aria-hidden="true"></i></a>
+                        </li>
+                        <li>
+                            <a href="https://linkedin.com/" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                        </li>
+                        <li>
+                            <a href="https://www.facebook.com/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                        </li>
+                        <li>
+                            <a href="https://twitter.com/" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                        </li>
+                        <li>
+                            <a href="https://plus.google.com/" target="_blank"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- End footer -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="js/scripts.min.js"></script>
 </body>
 
 </html>
