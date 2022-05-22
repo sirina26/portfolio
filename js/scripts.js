@@ -9,6 +9,22 @@
     Description: This file contains all the scripts associated with the single-page
     portfolio website.
 */
+const typed = select('.typed')
+ if (typed) { 
+     let typed_strings = typed.getAttribute('data-typed-items')
+      typed_strings = typed_strings.split(',')
+       new Typed('.typed', {
+            strings: typed_strings,
+            loop: true,
+            typeSpeed: 100,
+            backSpeed: 50, 
+            backDelay: 2000 
+            });
+        }
+
+<section id="hero" class="d-flex flex-column justify-content-center align-items-center">        <div class="hero-container" data-aos="fade-in">            <h1>BENNOUF Abdessamad</h1>            <p>Je suis <span class="typed" data-typed-items="Développeur,informaticien"></span></p>        </div>    </section>
+
+
 
 (function($) {
 

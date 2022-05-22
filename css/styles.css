@@ -123,6 +123,11 @@ header.active{display:block}header.sticky{position:fixed;z-index:999}
     #lead-content h1{font-size:1.5em}#lead-content h2{font-size:1em}
     #lead-content a{font-size:0.9em;padding:5px 10px}
 }
-.just{
+.just, p{
     text-align: justify !important;
 }
+#pname{
+    font-weight:bold; 
+    color :darkmagenta;
+};
+

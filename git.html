@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sirine Reys</title>
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+	<link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
+    <link rel="stylesheet" href="libs/font-awesome/css/font-awesome.min.css">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+</head>
+
+<body>
+    <table>
+    
+        <tbody>
+            <tr>
+                <td> 
+                    <a href="./."><img src="images/54702.gif" width="80" height="80"/>
+                    </a>
+                </td>
+                <td>
+                   <h1>Veille Technologique Git</h1>   
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <div class="container">
+    
+        <p><strong id="pname">Git </strong>est un logiciel de gestion de versions parmi les plus populaires. Il a été conçu pour gérer les projets de très grandes envergures. 
+            C'est un logiciel libre créé par Linus Torvalds qui a souhaité remplacer l'outil propriétaire qui était utilisé pour le développement du noyau Linux. 
+            Git respecte les principes typique Unix. Ce n'est pas un logiciel monolithique mais un ensemble de petits composants exécutant une tâche unique. Par exemple dans Git v1.5.3, la suite d'utilitaires est constituée de 143 commandes spécialisées, dont une bonne fraction doit être appelée en Bash. 
+            Ce logiciel en ligne de commande disponible sur les Unix-like, Mac OS et Windows et est distribué selon les termes de la licence publique générale GNU version 2. 
+            L'objectif du présent livre est de permettre au lecteur de se familiariser avec les concepts fondamentaux de Git et de prendre en main git afin de pouvoir gérer un projet de développement logiciel de façon décentralisée de façon sûre et respectueuse des bonnes pratiques de développement. 
+        </p>
+        <h2>
+            Origine du nom
+        </h2>
+        <p>
+            Linus Torvalds prononce [ˈɡɪt] avec un ɡ dur. 
+            Le magazine PC World nous apprend que « quand on lui a demandé pourquoi il avait appelé son logiciel “git”, qui est à peu près l'équivalent de “connard” en argot britannique, Linus Torvalds a répondu “je ne suis qu'un sale égocentrique, donc j'appelle tous mes projets d'après ma propre personne. D'abord Linux, puis Git.” ». 
+        </p>
+        <h2>
+            Particularités techniques
+        </h2>
+        <p>
+            Similaire en cela à BitKeeper, Git ne repose pas sur un serveur centralisé, mais il utilise un système de connexion pair à pair. Le code informatique développé est stocké non seulement sur l’ordinateur de chaque contributeur du projet, mais il peut également l'être sur un serveur dédié. C'est un outil de bas niveau, qui se veut simple et performant, dont la principale tâche est de gérer l'évolution du contenu d'une arborescence. 
+            Git indexe les fichiers d'après leur somme de contrôle calculée avec la fonction de hachage SHA-1. Quand un fichier n'est pas modifié, la somme de contrôle ne change pas et le fichier n'est stocké qu'une seule fois. En revanche, si le fichier est modifié, les deux versions sont stockées sur le disque. 
+            Contrastant avec les architectures de logiciel de gestion de versions habituellement utilisées jusqu'alors, Git repose entièrement sur un petit nombre de structures de données élémentaires. Linus Torvalds expliquait ainsi : « Par bien des aspects, vous pouvez considérer Git comme un simple système de fichiers. Il est adressé par contenu, et possède la notion de versionnement, mais je l'ai vraiment conçu en prenant le point de vue d'un spécialiste des systèmes de fichiers (après tout, j'ai l'habitude de travailler sur des noyaux) et je n'avais absolument aucune envie de créer un système de gestion de version traditionnel. »6 Les premières versions de Git offraient une interface rudimentaire pour manipuler ces objets internes avant que les fonctionnalités courantes de gestion de version ne soient ensuite progressivement ajoutées et raffinées. 
+            Git est considéré comme performant, au point que certains autres logiciels de gestion de version (Darcs, Arch), qui n'utilisent pas de base de données, se sont montrés intéressés par le système de stockage des fichiers de Git pour leur propre fonctionnement7,8. Ils continuent toutefois à proposer des fonctionnalités plus évoluées. 
+            Dès le début, Git a été pensé dans le but de fonctionner de façon décentralisée, c'est d'ailleurs l'une des clefs de son succès. La décentralisation de Git a aussi beaucoup apporté au développement des logiciels libres, puisque le besoin de demander un compte sur un dépôt SVN ou CVS centralisé devient obsolète. Il suffit de forker un projet ou de le cloner pour commencer à travailler dessus (avec tout l'historique du projet en local) et ensuite de proposer sa contribution (pull request) au dépôt principal (mainteneur principal du projet). 
+            Les serveurs Git utilisent par défaut le port 9418 pour le protocole spécifique à Git. Les protocoles HTTP, HTTPS et SSH (et leurs ports standards) peuvent aussi être utilisés. 
+            Fonctionnement
+       </p>
+    <h2>
+        Fonctionnement
+      </h2>
+      <p>Git possède deux structures de données : une base d'objets et un cache de répertoires. Il existe quatre types d'objets : </p>
+      <liste>
+          <li><strong id="pname">L'objet blob</strong> (pour binary large object désignant un ensemble de données brutes9), qui représente le contenu d'un fichier</li>
+          <li><strong id="pname">L'objet tree</strong> (mot anglais signifiant arbre), qui décrit une arborescence de fichiers. Il est constitué d'une liste d'objets de type blobs et des informations qui leur sont associées, tel que le nom du fichier et les permissions. Il peut contenir récursivement d'autres trees pour représenter les sous-répertoires</li>
+          <li><strong id="pname">l'objet commit </strong>(résultat de l'opération du même nom signifiant « valider une transaction »), qui correspond à une arborescence de fichiers (tree) enrichie de métadonnées comme un message de description, le nom de l'auteur, etc. Il pointe également vers un ou plusieurs objets commit parents pour former un graphe d'historiques</li>
+          <li><strong id="pname">L’objet tag</strong> (étiquette) qui est une manière de nommer arbitrairement un commit spécifique pour l'identifier plus facilement. Il est en général utilisé pour marquer certains commits, par exemple par un numéro ou un nom de version (2.1 ou bien Lucid Lynx)</li>
+      </liste>
+      <p>La base des objets peut contenir n'importe quel type d'objets. Une couche intermédiaire, utilisant des index (les sommes de contrôle), établit un lien entre les objets de la base et l'arborescence des fichiers. 
+        Chaque objet est identifié par une somme de contrôle SHA-1 de son contenu. Git calcule la somme de contrôle et utilise cette valeur pour déterminer le nom de fichier de l'objet. L'objet est placé dans un répertoire dont le nom correspond aux deux premiers caractères de la somme de contrôle. Le reste de la somme de contrôle constitue alors le nom du fichier pour cet objet. 
+        Git enregistre chaque révision dans un fichier en tant qu'objet blob unique. Les relations entre les objets blobs sont déterminées en examinant les objets commit. En général, les objets blobs sont stockés dans leur intégralité en utilisant la compression de la zlib. Ce principe peut rapidement consommer une grande quantité de place disque ; de ce fait, les objets peuvent être combinés dans des archives, qui utilisent la compression différentielle (c'est-à-dire que les blobs sont enregistrés sous la forme de différences par rapport aux autres blobs). 
+        </p>
+        <h2>Quelques commandes</h2>
+        <p>Git dispose notamment des commandes suivantes : </p>
+        <liste>
+            <li>	<strong id="pname">git init</strong> crée un nouveau dépôt </li>
+            <li>	<strong id="pname">git clone </strong>clone un dépôt distant </li>
+            <li>	<strong id="pname">git add</strong> ajoute de nouveaux objets blobs dans la base des objets pour chaque fichier modifié depuis le dernier commit. Les objets précédents restent inchangés</li>
+            <li>	<strong id="pname">git commit </strong>intègre la somme de contrôle SHA-1 d'un objet tree et les sommes de contrôle des objets commits parents pour créer un nouvel objet commit</li>
+            <li>	<strong id="pname">git branch</strong> liste les branches </li>
+            <li>	<strong id="pname">git merge </strong>fusionne une branche dans une autre </li>
+            <li>	<strong id="pname">git rebase </strong>déplace les commits de la branche courante devant les nouveaux commits d’une autre branche</li>
+            <li>	<strong id="pname">git log </strong>affiche la liste des commits effectués sur une branche</li>
+            <li>	<strong id="pname">git push </strong>publie les nouvelles révisions sur le remote. (La commande prend différents paramètres)</li>
+            <li>	<strong id="pname">git pull</strong> récupère les dernières modifications distantes du projet (depuis le Remote) et les fusionne dans la branche courante </li>
+            <li>	<strong id="pname">git stash </strong>stocke de côté un état non commité afin d’effectuer d’autres tâches </li>
+            <li>	<strong id="pname">git checkout</strong> annule les modifications effectuées, déplacement sur une référence (branche, hash) </li>
+            <li>	<strong id="pname">git switch </strong>changement de branche </li>
+            <li>	<strong id="pname">git remote </strong>gestion des remotes.</li>
+        </liste>
+        <h2>Interfaces</h2>
+        <p>Une interface web est fournie en standard avec Git : </p>
+        <liste>
+            <li><strong id="pname">gitweb: </strong>implémentée en Perl et maintenue par Kay Sievers</li>
+        </liste>
+        <p>
+            Ainsi que deux interfaces graphiques : 
+        </p>
+        <liste>
+            <li><strong id="pname">git-gui : </strong>outil permettant les opérations git courantes, implémenté en Tcl/Tk </li>
+            <li><strong id="pname">gitk :</strong> est l'interface de visualisation détaillée et graphique d'un historique Git</li>
+        </liste>
+        <h2>Interfaces de bureau tierces</h2>
+    <p>
+        Il existe également d'autres applications offrant une interface de bureau : 
+    </p>
+    <list>
+        <li><strong id="pname">qgit</strong> propose des outils supplémentaires par rapport à gitk </li>
+        <li><strong id="pname">Giggle</strong> est une interface en GTK+ </li>
+        <li><strong id="pname">GitExtensions</strong> est un client Git graphique tournant sous Windows </li>
+        <li><strong id="pname">Gitg</strong> est une interface graphique libre en GTK+, écrite en Vala </li>
+        <li><strong id="pname">JGit/EGit </strong>est une interface écrite en Java, puis une extension Git pour Eclipse </li>
+        <li><strong id="pname">SourceTree</strong> est un logiciel propriétaire gratuit compatible Windows et OS X édité par Atlassian permettant de gérer des dépôts Git et Mercurial (commit, merge, fetch, push…) </li>            
+        <li><strong id="pname">Sublime Merge </strong> permet de lire un dépôt git afin d'afficher le différentiel des dernières modifications, la liste des soumissions (commits) et les branches, parmi d'autres choses (septembre 2018) </li>
+        <li><strong id="pname">tig</strong> est une interface texte libre (GPLv2), écrite en C </li>
+        <li><strong id="pname">TortoiseGit</strong> logiciel libre sous licence GPLv2, écrit en C/C++, reprend les éléments d'interface de TortoiseSVN </li>
+        <li><strong id="pname">Tower</strong> est un logiciel payant, uniquement pour OS X permettant la gestion de dépôts Git</li>
+    </list>
+    <h2>Forges web pour auto-hébergement</h2>
+    <p>
+        D'autres projets fournissent des interfaces web pour Git avec parfois gestion de différents projets, tickets, wiki… : 
+    </p>
+    <list>
+        <li><strong id="pname">Allura</strong> de la fondation Apache, sous licence libre Apache 2.0, notamment utilisé par Sourceforge</li>
+        <li><strong id="pname">cgit,</strong> interface web libre (GPLv2) en C, écrite et utilisée par les auteurs du noyau Linux et de git et différents importants projets libres (KDE, tandis-que Gnome et Freedesktop.org l'ont utilisé avant de passer à une instance de Gitlab auto-hebérgée)</li>
+        <li><strong id="pname">AWS CodeCommit,</strong> intégré à la plate-forme de cloud computing Amazon Web Services </li>
+        <li><strong id="pname">Gerrit,</strong> interface web libre en Java</li> 
+        <li><strong id="pname">Gitalist</strong> est une interface web</li>
+        <li><strong id="pname">Gitblit</strong> est une interface web pour administrer et visualiser des dépôts Git </li>
+        <li><strong id="pname">GitBucket13…</strong></li>
+    </list>
+    <h2>
+        Sites d’hébergement 
+    </h2>
+    <p>
+        Il existe différents sites (également appelées forges) généralistes d'hébergement, ainsi que des sites dédiés à des développements en particulier, acceptant des projets liés d'utilisateur, comme l'instance cgit de Kernel.org (noyau Linux) ou les instances Gitlab de Freedesktop.org, Gnome, KDE ou encore de Blender. 
+    </p>
+    <liste>
+        <li><strong id="pname">Framagit, </strong>site communautaire associatif libre de Framasoft, basé sur Gitlab.</li>
+        <li><strong id="pname">GitHub</strong> est un service web d'hébergement et de gestion de développement de logiciels développé en Ruby on Rails et Erlang, qui appartient à Microsoft depuis juin 2018         </li>
+        <li><strong id="pname">GitLab.com</strong> équivalent à GitHub et développé en Ruby, évolution du code du service Gitorious, racheté en mars 2015, le code source est disponible et utilisé par différentes autres forges ;</li>
+        <li><strong id="pname">GNU Savannah,</strong> permettant également l'utilisation de Mercurial, dépôt officiel de la Free Software Foundation </li>
+        <li><strong id="pname">SourceForge.net,</strong> probablement le plus ancien, ouvert en 1999, il utilisait CVS à ses débuts, avant de passer à Subversion (SVN), puis récemment à Git également. Il utilise aujourd'hui Apache Allura13.</li>
+    </liste>
+    <h2>
+        Développement
+    </h2>
+    <p>
+        Git a été spécialement développé et optimisé pour le noyau Linux. Linus Torvalds a commencé son écriture en avril 2005, pour remplacer le programme propriétaire BitKeeper. En effet, Larry McVoy a révoqué la possibilité d'utiliser gratuitement son logiciel, après qu'Andrew Tridgell eut tenté une rétro-ingénierie sur les protocoles utilisés par BitKeeper. Les raisons de cette révocation restent toutefois controversées. 
+        La première version a été publiée le 7 avril 2005. Depuis, le développement de cet outil s'est poursuivi. Il a été progressivement amélioré, se voyant doté d'interfaces graphiques, d'interfaces web ou de scripts évolués. 
+        Le Kernel Summit de juillet 2005 a été l'occasion pour Linus Torvalds d'annoncer que les versions suivantes du noyau Linux (à partir de la version 2.6.12) seraient développées à l'aide de Git. 
+        Fin juillet 2005, Linus Torvalds a décidé de confier la maintenance et les évolutions de Git à Junio Hamano, expliquant qu'il avait « toujours dit qu'il ne voulait pas vraiment le maintenir sur le long terme ». 
+        Le développement est très actif. La parution de la première version stable (1.0) date du 21 décembre 2005, soit moins d'un an après le démarrage du projet. 
+    </p>
+    <h2>GitHub</h2>
+    <p>GitHub est un service web d'hébergement et de gestion de développement de logiciels, utilisant le logiciel de gestion de versions Git. Ce site est développé en Ruby on Rails et Erlang par Chris Wanstrath, PJ Hyett et Tom Preston-Werner. GitHub propose des comptes professionnels payants, ainsi que des comptes gratuits pour les projets de logiciels libres. Le site assure également un contrôle d'accès et des fonctionnalités destinées à la collaboration comme le suivi des bugs, les demandes de fonctionnalités, la gestion de tâches et un wiki pour chaque projet. 
+        En avril 2016, GitHub a annoncé avoir dépassé les quatorze millions d'utilisateurs et plus de 35 millions de dépôts de projets le plaçant comme le plus grand hébergeur de code source au monde. 
+        Le nom GitHub est composé du mot « git » faisant référence à un système de contrôle de version open-source et le mot « hub » faisant référence au réseau social bâti autour du système Git, mais aussi à une plate-forme de correspondance qui est appelée en anglais un « hub ». 
+    </p>
+    <center><img src="./images/LogoGit.png">
+    </center>
+    <H2>
+        Octocat
+    </H2>
+    <p>Octocat est la mascotte de la marque. Il a été dessiné par Simon Oxley1 (également créateur du logo de Twitter) dans un style épuré inspiré par les arts populaires japonais (manga). On voit une partie de son visage dans un déguisement lui donnant des oreilles de chat et des tentacules de céphalopode2. 
+        Le 4 juin 2018, Satya Nadella, PDG de Microsoft, annonce que son entreprise Microsoft est dans un processus d'acquisition de GitHub pour 7,5 milliards de dollars. 
+    </p>
+    <h2>Lexiques</h2>
+    <p><strong id="pname">Owner : </strong>Administrateur (les développeurs du projet qui ont tous les droits et qui participent le plus au projet.)</p>
+    <p><strong id="pname">Commitor :</strong> Personne travaillant sur le projet ayant moins de droit que le "owner".</p>
+    <p><strong id="pname">Contributor :</strong>Personne qui participe occasionnellement au projet mais ne peut le modifier.</p>
+    <p><strong id="pname">Patch : </strong> Méthode utilisée pour apporter de nouveaux éléments au projet sans le modifier.    </p>
+    <p><strong id="pname">Commit : </strong> Une sorte de publication (Mise a jour du projet sur le serveur).</p>    
+    <p><strong id="pname">Branch : </strong>Copie d'une fonctionnalitée ou d'une application pour pouvoir le modifier sans impacter le projet.</p>
+    <p><strong id="pname">Tag : </strong>Le Tag est un "instantané" du travail à un instant précis. C'est comme si on prenait une photo d'une partie du projet.    </p>
+    <p><strong id="pname">Update to Head : </strong>Moyen par lequel les utilisateurs peuvent récupérer le travail des autres.</p>
+    <p><strong id="pname">Merge : </strong>Outil de copie entre deux Branch ou une Branch et la version principale (souvent appelée Trunk).</p>
+    <h2>Workflow Gitflow </h2>
+    <p>
+        Gitflow est un workflow Git hériter qui constituait à l'origine une stratégie novatrice et disruptive pour gérer les branches Git. Il a perdu en popularité au profit des workflows basés sur le tronc, qui sont désormais considérés comme des bonnes pratiques pour les pratiques modernes de développement continu et DevOps. Gitflow peut également être difficile à utiliser avec l'intégration et le développement continus (CI/CD). Ce billet présente Gitflow à des fins historiques.
+    </p>
+    <h2>Qu'est-ce que Gitflow ? </h2>
+    <p>
+        Gitflow est un modèle de branching Git alternatif qui utilise des branches de fonctionnalité et plusieurs branches primaires. Il a été publié et popularisé pour la première fois par Vincent Driessen de chez nvie. Comparé au développement basé sur le tronc, Gitflow dispose de davantage de branches plus longues et de commits plus importants. Dans ce modèle, les développeurs créent une branche de fonctionnalité et attendent que la fonctionnalité soit terminée pour la merger à la branche « trunk » principale. Ces branches de fonctionnalités au long cours nécessitent une plus grande collaboration lors du merge, car elles risquent davantage de dévier de la branche « trunk ». Elles peuvent également introduire des mises à jour conflictuelles.
+        Gitflow est parfaitement adapté aux projets avec un cycle de livraison planifié et pour les bonnes pratiques DevOps de livraison continue. Il n'ajoute aucun nouveau concept ni aucune nouvelle commande en dehors de ce qui est exigé pour le workflow de branche de fonctionnalité. Il assigne plutôt des rôles très spécifiques aux différentes branches et définit comment et quand elles doivent interagir. Outre les branches de fonctionnalité (feature), le workflow utilise des branches individuelles pour la préparation, la maintenance et l'enregistrement des livraisons. Bien évidemment, vous bénéficiez également de tous les avantages du workflow de branche de fonctionnalité : pull requests, expériences isolées et collaboration plus efficace.
+    </p>
+    <h2>Exemple de mon Git</h2>
+    <center><img src="./images/monGit.png" height="500px" width="1100px"></center>
+</div>
+
+</body>
+
